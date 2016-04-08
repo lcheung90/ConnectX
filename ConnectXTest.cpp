@@ -38,7 +38,7 @@ TEST(ConnectXTest, outBoundsAtPosXTest)
 {
   ConnectX c = ConnectX(1,1,1);
   c.placePiece(0);
-  ASSERT_TRUE( c.at(10,0) == -1 ); 
+  ASSERT_TRUE( c.at(10,0) == -1 );
 }
 
 TEST(ConnectXTest, outBoundsAtNegXTest)
@@ -71,6 +71,15 @@ TEST(ConnectXTest, constructorDefaultDimsWidthTest)
   ASSERT_TRUE( c.at(0,0) == 0 );
 }
 
+TEST(ConnectXTest, constructorNegWidthTest)
+{
+  ConnectX c = ConnectX(-1,5,1);
+  ASSERT_TRUE( c.at(DEFAULT_WIDTH-1,DEFAULT_HEIGHT-1) == 0 );
+  ASSERT_TRUE( c.at(0,DEFAULT_HEIGHT-1) == 0 );
+  ASSERT_TRUE( c.at(DEFAULT_WIDTH-1,0) == 0 );
+  ASSERT_TRUE( c.at(0,0) == 0 );
+}
+
 TEST(ConnectXTest, constructorDefaultDimsHeightTest)
 {
   ConnectX c = ConnectX(5,0,1);
@@ -80,9 +89,27 @@ TEST(ConnectXTest, constructorDefaultDimsHeightTest)
   ASSERT_TRUE( c.at(0,0) == 0 );
 }
 
+TEST(ConnectXTest, constructorNegHeightTest)
+{
+  ConnectX c = ConnectX(5,-1,1);
+  ASSERT_TRUE( c.at(DEFAULT_WIDTH-1,DEFAULT_HEIGHT-1) == 0 );
+  ASSERT_TRUE( c.at(0,DEFAULT_HEIGHT-1) == 0 );
+  ASSERT_TRUE( c.at(DEFAULT_WIDTH-1,0) == 0 );
+  ASSERT_TRUE( c.at(0,0) == 0 );
+}
+
 TEST(ConnectXTest, constructorDefaultToWinTest)
 {
   ConnectX c = ConnectX(5,6,0);
+  ASSERT_TRUE( c.at(DEFAULT_WIDTH-1,DEFAULT_HEIGHT-1) == 0 );
+  ASSERT_TRUE( c.at(0,DEFAULT_HEIGHT-1) == 0 );
+  ASSERT_TRUE( c.at(DEFAULT_WIDTH-1,0) == 0 );
+  ASSERT_TRUE( c.at(0,0) == 0 );
+}
+
+TEST(ConnectXTest, constructorNegWinTest)
+{
+  ConnectX c = ConnectX(5,6,-1);
   ASSERT_TRUE( c.at(DEFAULT_WIDTH-1,DEFAULT_HEIGHT-1) == 0 );
   ASSERT_TRUE( c.at(0,DEFAULT_HEIGHT-1) == 0 );
   ASSERT_TRUE( c.at(DEFAULT_WIDTH-1,0) == 0 );
