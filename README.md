@@ -9,7 +9,7 @@
 
 ###ConnectX::showBoard
 
-* prints `' '` for invalid spot
+* prints `' '` for invalid board spots
 
 ###ConnectX::placePiece
 
