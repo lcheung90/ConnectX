@@ -5,5 +5,7 @@ install:
    - sudo apt-get install libgtest-dev
 
 script:
-   - make
-   - ls /usr/local/include/
+   - make clean
+   
+notifications:
+  email: false
