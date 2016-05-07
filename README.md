@@ -1,3 +1,7 @@
+[![Build
+Status](https://travis-ci.org/lcheung90/ConnectX.svg?branch=q03)](https://travis-ci.org/lcheung90/ConnectX)
+
+
 # Luis Cheung
 ## Quiz 3
 ### Bug List
