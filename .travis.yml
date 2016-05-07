@@ -1,8 +1,8 @@
-language:
-   - cpp
-compiler
+language: cpp
+compiler:
    - clang
    - g++
+
 before install:
    - sudo apt-get update
    - sudo apt-get install libgtest-dev
