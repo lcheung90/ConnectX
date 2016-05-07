@@ -6,4 +6,4 @@ install:
 
 script:
    - make
-   - make test
+   - ./ConnectXTest
