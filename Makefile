@@ -17,12 +17,12 @@ all : $(TESTS)
 clean :
 	rm -f $(TESTS) gtest.a gtest_main.a *.o *.gcov *.gcda *.gcno
 
-ConnectX.o : ConnectX.cpp ConnectX.h /usr/local/lib/libgtest_main.a
+ConnectX.o : ConnectX.cpp ConnectX.h /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c ConnectX.cpp
 
 ConnectXTest.o : ConnectXTest.cpp \
-                     ConnectX.h /usr/local/lib/libgtest_main.a
+                     ConnectX.h /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c ConnectXTest.cpp
 
-ConnectXTest : ConnectX.o ConnectXTest.o /usr/local/lib/libgtest_main.a
+ConnectXTest : ConnectX.o ConnectXTest.o /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
