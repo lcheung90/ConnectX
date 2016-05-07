@@ -10,7 +10,8 @@ before_install:
 
 script:
    - make
-   - ls
+   - ./ConnectXTest
+   - make clean
    
 notifications:
   email: false
