@@ -13,9 +13,6 @@ CXXFLAGS += -g -Wall -Wextra -pthread
 # All tests produced by this Makefile.
 TESTS = ConnectXTest
 
-# All Google Test headers. Adjust only if you moved the subdirectory
-GTEST_HEADERS = $(GTEST_DIR)/*.h 
-
 # House-keeping build targets.
 
 all : $(TESTS)
@@ -23,30 +20,12 @@ all : $(TESTS)
 clean :
 	rm -f $(TESTS) gtest.a gtest_main.a *.o *.gcov *.gcda *.gcno
 
-
-# Builds gtest.a and gtest_main.a.
-GTEST_SRCS_ = $(GTEST_DIR)/src/*.cc $(GTEST_DIR)/src/*.h $(GTEST_HEADERS)
-
-gtest-all.o : $(GTEST_SRCS_)
-	$(CXX) $(CPPFLAGS) -I$(GTEST_DIR) $(CXXFLAGS) -c \
-            $(GTEST_DIR)/src/gtest-all.cc
-
-gtest_main.o : $(GTEST_SRCS_)
-	$(CXX) $(CPPFLAGS) -I$(GTEST_DIR) $(CXXFLAGS) -c \
-            $(GTEST_DIR)/src/gtest_main.cc
-
-gtest.a : gtest-all.o
-	$(AR) $(ARFLAGS) $@ $^
-
-gtest_main.a : gtest-all.o gtest_main.o
-	$(AR) $(ARFLAGS) $@ $^
-
-ConnectX.o : ConnectX.cpp ConnectX.h $(GTEST_HEADERS)
+ConnectX.o : ConnectX.cpp ConnectX.h /usr/local/lib/libgtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c ConnectX.cpp
 
 ConnectXTest.o : ConnectXTest.cpp \
-                     ConnectX.h $(GTEST_HEADERS)
+                     ConnectX.h /usr/local/lib/libgtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c ConnectXTest.cpp
 
-ConnectXTest : ConnectX.o ConnectXTest.o gtest_main.a
+ConnectXTest : ConnectX.o ConnectXTest.o /usr/local/lib/libgtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
