@@ -28,7 +28,7 @@ public:
 		width = DEFAULT_WIDTH;
 		height = DEFAULT_HEIGHT;
 		toWin = DEFAULT_TO_WIN;
-	:};
+	};
 	Piece at(int,int);
 	void showBoard();
 	Piece whoseTurn();
