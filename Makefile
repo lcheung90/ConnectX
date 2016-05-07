@@ -4,7 +4,7 @@
 
 # Points to the root of Google Test. Change it to reflect where your
 # clone of the googletest repo is
-CPPFLAGS += --coverage -isystem 
+CPPFLAGS += --coverage -isystem -std=c++11 
 CXXFLAGS += -g -Wall -Wextra -pthread
 
 # All tests produced by this Makefile.
