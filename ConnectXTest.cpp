@@ -34,20 +34,6 @@ TEST(ConnectXTest, outBoundsUnderTest)
   ASSERT_TRUE( c.at(0,0) == 0 );
 }
 
-TEST(ConnectXTest, outBoundsAtPosXTest)
-{
-  ConnectX c = ConnectX(1,1,1);
-  c.placePiece(0);
-  ASSERT_TRUE( c.at(10,0) == -1 );
-}
-
-TEST(ConnectXTest, outBoundsAtNegXTest)
-{
-  ConnectX c = ConnectX(1,1,1);
-  c.placePiece(0);
-  ASSERT_TRUE( c.at(-10,0) == -1 );
-}
-
 TEST(ConnectXTest, outBoundsAtPosYTest)
 {
   ConnectX c = ConnectX(1,1,1);
