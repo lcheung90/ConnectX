@@ -1,7 +1,6 @@
 sudo: required
 language: cpp
 compiler:
-   - clang++
    - g++
 
 before_install:
@@ -10,7 +9,7 @@ before_install:
    - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
 
 script:
-   - sudo ls /usr/local/lib
+   - which gtest
    
 notifications:
   email: false
