@@ -13,7 +13,6 @@ script:
    - make
    - ./ConnectXTest
    - gcov -b ConnectX.cpp
-   - make clean
 
 after_success:
    - coveralls --exclude lib --gcov-optons '\-lp'
