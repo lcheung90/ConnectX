@@ -1,6 +1,6 @@
 [![Build
 Status](https://travis-ci.org/lcheung90/ConnectX.svg?branch=q03)](https://travis-ci.org/lcheung90/ConnectX)
-
+[![Coverage Status](https://coveralls.io/repos/github/lcheung90/ConnectX/badge.svg?branch=q03)](https://coveralls.io/github/lcheung90/ConnectX?branch=q03)
 
 # Luis Cheung
 ## Quiz 3
