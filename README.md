@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/lcheung90/ConnectX.svg?branch=master)](https://travis-ci.org/lcheung90/ConnectX)
-
 [![Coverage Status](https://coveralls.io/repos/github/lcheung90/ConnectX/badge.svg?branch=master)](https://coveralls.io/github/lcheung90/ConnectX?branch=master)
 
 # Luis Cheung
